@@ -37,10 +37,13 @@ public partial class MainWindow : Window
         this.ImageVk.MouseLeftButtonDown += (sender, ev) =>
         {
             _browserControll.Start();
+            this.Close();
         };
         this.ImageZapret.MouseLeftButtonDown += (sender, ev) =>
         {
             _zapretControll.Start();
+            this.Close();
+
         };
     }  
     private void Close_click(object sender, RoutedEventArgs e)
