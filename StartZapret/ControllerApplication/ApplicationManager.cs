@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-
 namespace StartZapret.ControllerApplication;
+
 
 public class ApplicationManagerViewModel : INotifyPropertyChanged
 {
@@ -15,16 +15,9 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged
     public ApplicationManagerViewModel()
     {
 
-        //Task.Factory.StartNew(() =>
-        //{
-        //    while(OpacityPropyrty < 3)
-        //    {
-        //        Task.Delay(1000).Wait();
-        //        OpacityPropyrty += 0.3 / 0.5;
-        //        TestTitle++;
-        //    }
-        //});
     }
+
+       
     public ICommand My_command
     {
         get
@@ -53,9 +46,6 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged
             OnPropertyChanges("OpacityPropyrty");
 
         }
-
-
-
     }
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanges([CallerMemberName] string? property = null)

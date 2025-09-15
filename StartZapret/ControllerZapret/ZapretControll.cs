@@ -2,7 +2,7 @@
 
 namespace StartZapret.ControllerZapret;
 
-public class ZapretControll : IZapretStart
+public class ZapretControll : IStartApp
 {
     public void Start()
     {

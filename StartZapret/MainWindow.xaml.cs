@@ -9,45 +9,51 @@ namespace StartZapret;
 public partial class MainWindow : Window
 {
     private readonly ZapretControll _zapretControll;
+    private readonly BrowserControll _browserControll;
     public MainWindow()
     {
         _zapretControll = new ZapretControll();
-        //this.DataContext = new ApplicationManagerViewModel(this);
+        _browserControll = new BrowserControll();
         InitializeComponent();
-        
+        AppendEvents();
     }
-
-
-
-
+    private void AppendEvents()
+    {
+        this.ImageVk.MouseDown += (sender, ev) =>
+        {
+            if(sender is Image imageTtem)
+                OpacityUpdate(imageTtem);
+        };
+        this.ImageVk.MouseEnter += (sender, ev) =>
+        {
+            if(sender is Image imageTtem)
+                OpacityUpdate(imageTtem);
+        };
+        this.ImageZapret.MouseEnter += (sender, ev) =>
+        {
+            if(sender is Image imageTtem)
+                OpacityUpdate(imageTtem);
+        };
+        this.ImageVk.MouseLeftButtonDown += (sender, ev) =>
+        {
+            _browserControll.Start();
+        };
+    }  
     private void Close_click(object sender, RoutedEventArgs e)
     {
         this.Close();
     }
-
-    private void ImageZapret_MouseEnter(object sender, MouseEventArgs e)
+    private void OpacityUpdate(Image image)
     {
-        OpacityUpdate();
-    }
-
-    private void OpacityUpdate()
-    {
-        this.ImageZapret.Opacity = 4;
+        
         DoubleAnimation doubleAnimation = new DoubleAnimation();
         doubleAnimation.From = 0.1;
         doubleAnimation.To = 0.7;
         doubleAnimation.AutoReverse = true;
         doubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
         doubleAnimation.Duration = TimeSpan.FromSeconds(2);
-        ImageZapret.BeginAnimation(Image.OpacityProperty, doubleAnimation);
-    }
-
-
-    private void ImageZapret_MouseLeave(object sender, MouseEventArgs e)
-    {
-        
-    }
-
+        image.BeginAnimation(Image.OpacityProperty, doubleAnimation);
+    }  
     private void ImageZapret_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         _zapretControll.Start();

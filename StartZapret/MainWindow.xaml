@@ -42,8 +42,7 @@
         <Image 
             MouseLeftButtonDown="ImageZapret_MouseLeftButtonDown"
             x:Name="ImageZapret" 
-            MouseLeave="ImageZapret_MouseLeave"
-            MouseEnter="ImageZapret_MouseEnter"     
+             
             Grid.Column="0" 
             Grid.Row="1"
             Opacity="{Binding OpacityPropyrty }">
@@ -52,6 +51,18 @@
                 <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\images.jpeg" DestinationFormat="Gray32Float"/>
             </Image.Source>
         </Image>
+        <Image            
+            x:Name="ImageVk" 
+            Grid.Column="1" 
+            Grid.Row="1"
+            Opacity="{Binding OpacityPropyrty }">
+            <Image.Source>
+                <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
+            </Image.Source>
+        </Image>
+
+            
+            
         <TextBlock
             
             Text="{Binding TestTitle}"

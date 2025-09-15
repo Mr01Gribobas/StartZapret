@@ -1,5 +1,5 @@
 ﻿namespace StartZapret.ControllerZapret;
-public interface IZapretStart
+public interface IStartApp
 {
     void Start();
 }
