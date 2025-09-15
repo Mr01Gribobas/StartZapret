@@ -39,14 +39,11 @@
             Grid.Column="2"
             >
         </Button>
-        <Image 
-            MouseLeftButtonDown="ImageZapret_MouseLeftButtonDown"
-            x:Name="ImageZapret" 
-             
+        <Image             
+            x:Name="ImageZapret"              
             Grid.Column="0" 
             Grid.Row="1"
             Opacity="{Binding OpacityPropyrty }">
-            
             <Image.Source>
                 <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\images.jpeg" DestinationFormat="Gray32Float"/>
             </Image.Source>
@@ -59,11 +56,8 @@
             <Image.Source>
                 <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
             </Image.Source>
-        </Image>
-
-            
-            
-        <TextBlock
+        </Image>           
+       <TextBlock
             
             Text="{Binding TestTitle}"
             Foreground="Red"> </TextBlock>

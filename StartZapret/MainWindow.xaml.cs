@@ -38,6 +38,10 @@ public partial class MainWindow : Window
         {
             _browserControll.Start();
         };
+        this.ImageZapret.MouseLeftButtonDown += (sender, ev) =>
+        {
+            _zapretControll.Start();
+        };
     }  
     private void Close_click(object sender, RoutedEventArgs e)
     {
@@ -54,8 +58,5 @@ public partial class MainWindow : Window
         doubleAnimation.Duration = TimeSpan.FromSeconds(2);
         image.BeginAnimation(Image.OpacityProperty, doubleAnimation);
     }  
-    private void ImageZapret_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-    {
-        _zapretControll.Start();
-    }
+    
 }
