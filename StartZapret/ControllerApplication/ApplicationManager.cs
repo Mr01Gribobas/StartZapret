@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
-namespace StartZapret.ControllerApplication;
-
+﻿namespace StartZapret.ControllerApplication;
 
 public class ApplicationManagerViewModel : INotifyPropertyChanged,IDisposable
 {

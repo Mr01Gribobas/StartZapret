@@ -1,11 +1,6 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices.JavaScript;
-using static System.Net.WebRequestMethods;
+﻿namespace StartZapret.ControllerZapret;
 
-namespace StartZapret.ControllerZapret;
-
-
-class BrowserControll : IStartApp
+class BrowserControll : IStartApp 
 {
     public void Start()
     {

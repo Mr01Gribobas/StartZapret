@@ -1,8 +1,6 @@
-﻿using System.Diagnostics;
+﻿namespace StartZapret.ControllersApp;
 
-namespace StartZapret.ControllerZapret;
-
-public class ZapretControll : IStartApp
+public class ZapretControll : ControllerBase ,  IStartApp
 {
     public void Start()
     {

@@ -1,7 +1,4 @@
-﻿
-using System.Windows.Input;
-
-namespace StartZapret.ControllerApplication;
+﻿namespace StartZapret.ControllerApplication;
 
 public class DelegateComandCustom : ICommand
 {

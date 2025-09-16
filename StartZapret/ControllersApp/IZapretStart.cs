@@ -1,4 +1,4 @@
-﻿namespace StartZapret.ControllerZapret;
+﻿namespace StartZapret.ControllersApp;
 public interface IStartApp
 {
     void Start();
