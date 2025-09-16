@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace StartZapret.ControllerApplication;
 
 
-public class ApplicationManagerViewModel : INotifyPropertyChanged
+public class ApplicationManagerViewModel : INotifyPropertyChanged,IDisposable
 {
     public static MainWindow? _mainWindow;
     public ApplicationManagerViewModel(MainWindow main)
@@ -24,15 +24,26 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged
         {
             return new DelegateComandCustom((objAction) =>
             {
-                TestTitle++;
-                for(Int32 i = 0; i < 3; i++)
-                {
-                    Task.Delay(1000).Wait();
-                    TestTitle++;
 
-                }
+                //Thread thread = new Thread(new ThreadStart(OpacityUpdate));
+                //thread.Start();
 
             });
+        }
+    }
+
+    private async void OpacityUpdate()
+    {
+        while(true)
+        {
+            if(OpacityPropyrty < 0.7)
+            {
+                OpacityPropyrty += 0.2;
+            }
+            else if(OpacityPropyrty > 0.7)
+            {
+                OpacityPropyrty -= 0.2;
+            }
         }
     }
 
@@ -43,7 +54,7 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged
         set
         {
             _opacityProperty = value;
-            OnPropertyChanges("OpacityPropyrty");
+            OnPropertyChanges(nameof(OpacityPropyrty));
 
         }
     }
@@ -53,6 +64,12 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 
     }
+
+    public void Dispose()
+    {
+        this.Dispose();
+    }
+
     private int _testTitle = 0;
     public int TestTitle
     {

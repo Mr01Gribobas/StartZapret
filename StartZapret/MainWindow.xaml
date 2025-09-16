@@ -10,13 +10,25 @@
         Width="400"
         AllowsTransparency="True"
         WindowStyle="None"
-        Background="Transparent" Icon="/images.jpeg"
-        
+        Background="Transparent"       
         >
-    <Window.DataContext>
-        <AppManager:ApplicationManagerViewModel></AppManager:ApplicationManagerViewModel>
-    </Window.DataContext>
+    <Window.Resources>
+    <Style x:Key="StyleResources">
+            <Setter Property="Control.Opacity" Value="0.3"></Setter>
+            <Style.Triggers>
+                <Trigger Property="Control.Opacity" Value="0.4">
+                    <Setter Property="Control.Background" Value="Blue"/>
+                </Trigger>
+                <Trigger Property="Control.Opacity" Value="0.3">
+                    <Setter Property="Control.Background" Value="BlueViolet"/>
+                </Trigger>
+            </Style.Triggers>
         
+    </Style>
+
+    </Window.Resources>
+        
+
     <Grid Background="Bisque" Opacity="1.3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -32,12 +44,15 @@
             x:Name="ButtonClose"
             Width="20"
             Height="20"
-            Content="X"
+            Content="X"            
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Click="Close_click"
-            Grid.Column="2"
+            Grid.Column="2"            
             >
+            
+
+
         </Button>
         <Image             
             x:Name="ImageZapret"              
@@ -45,7 +60,7 @@
             Grid.Row="1"
             Opacity="{Binding OpacityPropyrty }">
             <Image.Source>
-                <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\images.jpeg" DestinationFormat="Gray32Float"/>
+                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\images.jpeg" DestinationFormat="Gray32Float"/>
             </Image.Source>
         </Image>
         <Image            
@@ -54,14 +69,34 @@
             Grid.Row="1"
             Opacity="{Binding OpacityPropyrty }">
             <Image.Source>
-                <FormatConvertedBitmap Source="C:\Users\maks-\source\repos\StartZapret\StartZapret\Source\Images\vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
+                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
             </Image.Source>
-        </Image>           
-       <TextBlock
+        </Image>
+        <Image            
+    x:Name="ImageDis" 
+    Grid.Column="2" 
+    Grid.Row="1"
+    Opacity="{Binding OpacityPropyrty }">
+            <Image.Source>
+                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\disImage.jpg" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
+            </Image.Source>
+        </Image>
+            
+        <TextBlock
             
             Text="{Binding TestTitle}"
-            Foreground="Red"> </TextBlock>
-        <Button Command="{Binding My_command}" Content="OK" Grid.Column="2" Grid.Row="2"></Button>
+            Foreground="Red"
+            
+            > </TextBlock>
+        <Button Command="{Binding My_command}"
+                Width="100"
+                Height="100"
+            Style="{StaticResource ResourceKey = StyleResources }"
+             Opacity="{Binding OpacityPropyrty }" 
+                Content="OK"
+                Grid.Column="1"
+                Grid.Row="2"
+                ></Button>
     </Grid>
 
 </Window>

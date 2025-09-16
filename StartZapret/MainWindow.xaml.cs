@@ -14,6 +14,7 @@ public partial class MainWindow : Window
     {
         _zapretControll = new ZapretControll();
         _browserControll = new BrowserControll();
+        DataContext = new ApplicationManagerViewModel(this);
         InitializeComponent();
         AppendEvents();
     }
@@ -45,7 +46,16 @@ public partial class MainWindow : Window
             this.Close();
 
         };
+        this.ImageDis.MouseEnter += (sender, ev) =>
+        {
+            if(sender is Image imageTtem) OpacityUpdate(imageTtem);
+        };
+        this.ImageDis.MouseLeftButtonDown += (sender, ev) =>
+        {
+            //
+        };
     }  
+
     private void Close_click(object sender, RoutedEventArgs e)
     {
         this.Close();
