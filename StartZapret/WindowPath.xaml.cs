@@ -11,12 +11,20 @@ public partial class WindowPath : Window
 
     private void BtnSave_Click(object sender, RoutedEventArgs e)
     {
-        this.DialogResult = true;
+        if(Path != string.Empty)
+        {
+            this.DialogResult = true;
+
+        }
+        else
+        {
+            this.DialogResult = false;
+        }
     }
 
-    public string Path 
+    public string Path
     {
-        get  { return boxPath.Text ; }
+        get { return boxPath.Text; }
     }
 
 }

@@ -20,11 +20,10 @@ public class ApplicationManagerViewModel : INotifyPropertyChanged,IDisposable
         {
             return new DelegateComandCustom((objAction) =>
             {
-
-                //Thread thread = new Thread(new ThreadStart(OpacityUpdate));
-                //thread.Start();
-
+                _mainWindow.Resets();
             });
+                
+                
         }
     }
 

@@ -15,6 +15,7 @@
     <Window.Resources>
     <Style x:Key="StyleResources">
             <Setter Property="Control.Opacity" Value="0.3"></Setter>
+            <Setter Property="Control.Background" Value="DimGray"></Setter>
             <Style.Triggers>
                 <Trigger Property="Control.Opacity" Value="0.4">
                     <Setter Property="Control.Background" Value="Blue"/>
@@ -92,7 +93,7 @@
                 Height="100"
             Style="{StaticResource ResourceKey = StyleResources }"
              Opacity="{Binding OpacityPropyrty }" 
-                Content="OK"
+                Content="Reset"
                 Grid.Column="1"
                 Grid.Row="2"
                 ></Button>

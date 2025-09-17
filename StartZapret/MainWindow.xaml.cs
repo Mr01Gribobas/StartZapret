@@ -2,16 +2,33 @@
 
 public partial class MainWindow : Window
 {
-    private readonly ZapretControll _zapretControll;
-    private readonly BrowserControll _browserControll;
+    private Dictionary<string, ControllerBase> _controllers;     
+    public bool _thereIs;
     public MainWindow()
     {
-        _zapretControll = new ZapretControll();
-        _browserControll = new BrowserControll();
+        Building();
         DataContext = new ApplicationManagerViewModel(this);
         InitializeComponent();
         AppendEvents();
     }
+
+    private void Building()
+    {
+        _controllers = new Dictionary<string, ControllerBase>();
+        _controllers["zapret"] = new ZapretControll();
+        _controllers["browser"] = new BrowserControll();
+    }
+    public void Resets()
+    {
+        foreach(var item in _controllers)
+        {
+            item.Value.ResetData();
+        }
+    }
+
+
+
+
     private void AppendEvents()
     {
         this.ImageVk.MouseDown += (sender, ev) =>
@@ -31,12 +48,18 @@ public partial class MainWindow : Window
         };
         this.ImageVk.MouseLeftButtonDown += (sender, ev) =>
         {
-            _browserControll.Start();
-            this.Close();
+
+            _thereIs = _controllers["browser"].ReadFromFile();
+            if(_controllers["browser"].Start())
+            {
+                this.Close();
+            }
+
         };
         this.ImageZapret.MouseLeftButtonDown += (sender, ev) =>
         {
-            if(_zapretControll.Start())
+           _thereIs = _controllers["zapret"].ReadFromFile();
+            if(_controllers["zapret"].Start())
             {
                 this.Close();
             }

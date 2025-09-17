@@ -11,7 +11,13 @@ public  class ZapretControll : ControllerBase
         }
         catch(Exception ex)
         {
-            return UpgradePath(this);
+            if(UpgradePath(this))
+            {
+                this.Start();
+                return true;
+            }
+            return false;
         }
     }
+
 }

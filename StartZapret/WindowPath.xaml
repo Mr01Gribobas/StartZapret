@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="WindowPath"
         Height="100" 
-        Width="400">
+        Width="400"
+        Background="Gray"
+        >
     
     <Grid>
-        <TextBlock x:Name="textBlockX" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left"  ></TextBlock>
-        <TextBox x:Name="boxPath" Height="20" Width="300" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBox>
-        <Button x:Name="btnSave" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="30" Height="30" Content="Save"> </Button>
+        <TextBlock x:Name="textBlockX" Foreground="White" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left"  ></TextBlock>
+        <TextBox Background="DimGray" x:Name="boxPath" Height="20" Width="300" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBox>
+        <Button Background="Black" Foreground="White" x:Name="btnSave" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="30" Height="30" Content="Save"> </Button>
     </Grid>
 </Window>
