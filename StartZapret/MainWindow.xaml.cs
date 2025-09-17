@@ -36,19 +36,24 @@ public partial class MainWindow : Window
         };
         this.ImageZapret.MouseLeftButtonDown += (sender, ev) =>
         {
-            _zapretControll.Start();
-            this.Close();
-
+            if(_zapretControll.Start())
+            {
+                this.Close();
+            }
         };
+
+
+
         this.ImageDis.MouseEnter += (sender, ev) =>
         {
-            if(sender is Image imageTtem) OpacityUpdate(imageTtem);
+            if(sender is Image imageTtem)
+                OpacityUpdate(imageTtem);
         };
         this.ImageDis.MouseLeftButtonDown += (sender, ev) =>
         {
             //
         };
-    }  
+    }
 
     private void Close_click(object sender, RoutedEventArgs e)
     {
@@ -56,7 +61,7 @@ public partial class MainWindow : Window
     }
     private void OpacityUpdate(Image image)
     {
-        
+
         DoubleAnimation doubleAnimation = new DoubleAnimation();
         doubleAnimation.From = 0.1;
         doubleAnimation.To = 0.7;
@@ -64,6 +69,6 @@ public partial class MainWindow : Window
         doubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
         doubleAnimation.Duration = TimeSpan.FromSeconds(2);
         image.BeginAnimation(Image.OpacityProperty, doubleAnimation);
-    }  
-    
+    }
+
 }

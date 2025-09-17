@@ -1,16 +1,29 @@
 ﻿namespace StartZapret.ControllerZapret;
 
-class BrowserControll : IStartApp 
+class BrowserControll : ControllerBase
 {
-    public void Start()
+    public override bool Start()
     {
-        var url = "https://vk.com/audios237180869";
-        ProcessStartInfo info = new ProcessStartInfo()
+        try
         {
-            FileName = "explorer.exe",
-            Arguments= url,
-        };
-        Process.Start(info);
+            var url = "https://vk.com/audios237180869";
+            ProcessStartInfo info = new ProcessStartInfo()
+            {
+                FileName = "explorer.exe",
+                Arguments = url,
+            };
+            Process.Start(info);
+            return true;
+
+        }
+        catch(ArgumentNullException ex)
+        {
+            return UpgradePath(this);
+        }
+
     }
+
+
+
 }
 

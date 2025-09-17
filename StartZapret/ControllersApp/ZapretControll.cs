@@ -1,9 +1,17 @@
 ﻿namespace StartZapret.ControllersApp;
 
-public class ZapretControll : ControllerBase ,  IStartApp
+public  class ZapretControll : ControllerBase
 {
-    public void Start()
+    public override bool Start()
     {
-        Process.Start("C:\\Users\\maks-\\Downloads\\zapret-discord-youtube-1.8.3\\general (ALT6).bat");
+        try
+        {
+            Process.Start(_path);
+            return true;
+        }
+        catch(Exception ex)
+        {
+            return UpgradePath(this);
+        }
     }
 }
