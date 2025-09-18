@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Source\Images\disImage.jpg" />
+    <None Remove="Source\Images\images.jpeg" />
+    <None Remove="Source\Images\vkImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\Images\disImage.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Source\Images\images.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Source\Images\vkImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

@@ -9,4 +9,6 @@ class FileConfig
     public string _pathName { get; set; }
     [DataMember]
     public string _urlName { get; set; }
+    [DataMember]
+    public string _pathNameToDis { get; set; }
 }

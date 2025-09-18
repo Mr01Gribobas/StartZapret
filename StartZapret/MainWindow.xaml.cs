@@ -1,13 +1,14 @@
-﻿namespace StartZapret;
+﻿
+namespace StartZapret;
 
 public partial class MainWindow : Window
 {
     private Dictionary<string, ControllerBase> _controllers;     
-    public bool _thereIs;
+    public bool _thereIs;   
     public MainWindow()
     {
         Building();
-        DataContext = new ApplicationManagerViewModel(this);
+        DataContext = new ApplicationManagerViewModel(this);      
         InitializeComponent();
         AppendEvents();
     }
@@ -17,6 +18,7 @@ public partial class MainWindow : Window
         _controllers = new Dictionary<string, ControllerBase>();
         _controllers["zapret"] = new ZapretControll();
         _controllers["browser"] = new BrowserControll();
+        _controllers["Discord"] = new DiscordController();
     }
     public void Resets()
     {
@@ -24,6 +26,7 @@ public partial class MainWindow : Window
         {
             item.Value.ResetData();
         }
+        MessageBox.Show("Файл сброшен ");
     }
 
 
@@ -60,6 +63,14 @@ public partial class MainWindow : Window
         {
            _thereIs = _controllers["zapret"].ReadFromFile();
             if(_controllers["zapret"].Start())
+            {
+                this.Close();
+            }
+        };
+        this.ImageDis.MouseLeftButtonDown += (sender, ev) =>
+        {
+            _thereIs = _controllers["Discord"].ReadFromFile();
+            if(_controllers["Discord"].Start())
             {
                 this.Close();
             }

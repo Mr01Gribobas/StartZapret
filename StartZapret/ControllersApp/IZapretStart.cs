@@ -2,4 +2,5 @@
 public interface IStartApp
 {
     bool Start();
+
 }

@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:StartZapret"
         mc:Ignorable="d"
         Title="WindowPath"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        
         Height="100" 
         Width="400"
         Background="Gray"

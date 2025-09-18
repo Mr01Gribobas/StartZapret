@@ -9,16 +9,13 @@ namespace StartZapret.ControllersApp;
 public abstract class ControllerBase : IStartApp
 {
 
-    public string? _path { get; set; }
+    public string? _path { get; private set; }
 
-    public string? _url { get; set; }
+    public string? _url { get; private set; }
+    public string? _pathDis {  get;private set; }
 
     //public string? _key { get; set; }
-    public void Init(string path)
-    {
-        path = "C:\\Users\\maks-\\Downloads\\zapret-discord-youtube-1.8.3\\general (ALT6).bat"; //TODO 
-        _path = path;
-    }
+
     public abstract bool Start();
 
     protected bool UpgradePath(ControllerBase controller)
@@ -50,11 +47,23 @@ public abstract class ControllerBase : IStartApp
             else
             { return false; }
         }
+        else if(controller is DiscordController discord)
+        {
+            windowDialog.textBlockX.Text = "Укажите путь:";
+            if(windowDialog.ShowDialog() == true)
+            {
+                _pathDis = windowDialog.Path;
+                SaveToFile();
+                return true;
+            }
+            else
+            { return false; }
+        }
         return false;
     }
     public void SaveToFile()
     {
-        FileConfig fileConfig = new FileConfig() { _urlName = _url, _pathName = _path };
+        FileConfig fileConfig = new FileConfig() { _urlName = _url, _pathName = _path, _pathNameToDis = _pathDis };
         var fileJsonName = "config.json";
         var jsonFormat = new DataContractJsonSerializer(typeof(FileConfig));
         using(var fs = new FileStream(fileJsonName, FileMode.OpenOrCreate))
@@ -77,6 +86,7 @@ public abstract class ControllerBase : IStartApp
                 {
                     _path = deserializeResult._pathName;
                     _url = deserializeResult._urlName;
+                    _pathDis = deserializeResult._pathNameToDis;
                     return true;
                 }
                 else
@@ -104,8 +114,5 @@ public abstract class ControllerBase : IStartApp
         }
     }
 
-
-
-
-
+    
 }

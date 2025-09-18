@@ -64,7 +64,7 @@
             
             >
             <Image.Source>
-                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\images.jpeg" DestinationFormat="Gray32Float"/>
+                <FormatConvertedBitmap  Source="/Source/Images/images.jpeg" DestinationFormat="Gray32Float"/>
             </Image.Source>
         </Image>
         <Image            
@@ -73,7 +73,7 @@
             Grid.Row="1"
             Opacity="{Binding OpacityPropyrty }">
             <Image.Source>
-                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
+                <FormatConvertedBitmap Source="/Source/Images/vkImage.png" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
             </Image.Source>
         </Image>
         <Image            
@@ -82,7 +82,7 @@
     Grid.Row="1"
     Opacity="{Binding OpacityPropyrty }">
             <Image.Source>
-                <FormatConvertedBitmap Source="C:\Users\MSI\source\repos\Mr01Gribobas\StartZapret\StartZapret\Source\Images\disImage.jpg" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
+                <FormatConvertedBitmap Source="/Source/Images/disImage.jpg" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
             </Image.Source>
         </Image>
             
