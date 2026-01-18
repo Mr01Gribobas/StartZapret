@@ -85,18 +85,25 @@
                 <FormatConvertedBitmap Source="/Source/Images/disImage.jpg" DestinationFormat="Gray32Float"></FormatConvertedBitmap>
             </Image.Source>
         </Image>
+
+
             
-        
-            
+        <Border
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="50"
+            Grid.Column="1"
+            Grid.Row="2">
         <Button Command="{Binding My_command}"
                 Width="100"
                 Height="100"
+                BorderThickness="9"
             Style="{StaticResource ResourceKey = StyleResources }"
              Opacity="{Binding OpacityPropyrty }" 
                 Content="Reset"
-                Grid.Column="1"
-                Grid.Row="2"
+                
                 ></Button>
+        </Border>
     </Grid>
 
 </Window>

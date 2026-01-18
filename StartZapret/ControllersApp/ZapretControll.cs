@@ -4,9 +4,16 @@ public  class ZapretControll : ControllerBase
 {
     public override bool Start()
     {
+        ProcessStartInfo info = new ProcessStartInfo() 
+        {
+            FileName = _path,
+            UseShellExecute = true,
+            Verb = "runas",
+            WindowStyle = ProcessWindowStyle.Normal
+        };
         try
         {
-            Process.Start(_path);
+            Process.Start(info);
             return true;
         }
         catch(Exception ex)
