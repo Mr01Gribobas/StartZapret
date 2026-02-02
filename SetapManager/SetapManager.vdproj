@@ -37,6 +37,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -53,6 +69,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -152,7 +176,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetapManager"
         "ProductCode" = "8:{807B2D14-E9DB-422B-9A50-8514C4E85C74}"
-        "PackageCode" = "8:{8AC67070-BCF4-49C1-880A-87473E7C5AF8}"
+        "PackageCode" = "8:{9F1ACB36-C16D-43ED-8342-EB97EB9F56AB}"
         "UpgradeCode" = "8:{A598354F-0994-400E-8E5C-875842CDABCA}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -272,29 +296,29 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6D57D50BD14F4809BDEAB194FE5499CC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_86EE7342108445B38E5FFE811DE16033"
             {
-            "Name" = "8:Shortcut StartZapret"
+            "Name" = "8:shutcutMenu"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_0CF54905A79B43E99D067E9DEE3D1DE2"
-            "Folder" = "8:_8342A9E18E1845FC8517F50F9A4B8F93"
+            "Target" = "8:_B8ED9B30FE024B1C92014BAABB4DBD9B"
+            "Folder" = "8:_7D13964180A34CD79319007D0E0151FB"
             "WorkingFolder" = "8:_B8ED9B30FE024B1C92014BAABB4DBD9B"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C004E0D67B6F4604B7436F0899420A7F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8964343ED35042A18FBC3BF8289957C1"
             {
-            "Name" = "8:Shortcut StartZapret"
+            "Name" = "8:shotcutCustom"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_0CF54905A79B43E99D067E9DEE3D1DE2"
+            "Target" = "8:_B8ED9B30FE024B1C92014BAABB4DBD9B"
             "Folder" = "8:_A96E0E7B7EAD43A6A8381B9F18179FDB"
             "WorkingFolder" = "8:_B8ED9B30FE024B1C92014BAABB4DBD9B"
             "Icon" = "8:"
